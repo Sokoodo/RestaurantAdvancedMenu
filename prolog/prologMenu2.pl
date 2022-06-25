@@ -1,9 +1,11 @@
-ingredient(tomato).
-ingredient(egg).
-ingredient(flour).
-ingredient(pork_meat).
-ingredient(pasta).
-ingredient(cheese).
+vegetarian(cheese).
+vegetarian(egg).
+vegan(flour).
+vegan(tomato).
+vegan(pasta).
+carnivore(pork_meat).
+
+vegetarian(X) :- vegan(X).
 
 type_food(vegetarian).
 type_food(vegan).
