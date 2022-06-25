@@ -1,0 +1,322 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:di="http://www.omg.org/spec/DMN/20180521/DI/" id="Definitions_05ye7to" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="4.12.0">
+  <decision id="Decision_11lanjr" name="vegan">
+    <authorityRequirement id="AuthorityRequirement_1rih8jn">
+      <requiredAuthority href="#KnowledgeSource_06shsu8" />
+    </authorityRequirement>
+    <decisionTable id="DecisionTable_1yx3kev">
+      <input id="InputClause_04rzreo" label="ingredient">
+        <inputExpression id="LiteralExpression_14zpwzd" typeRef="string">
+          <text>ingredient</text>
+        </inputExpression>
+      </input>
+      <output id="OutputClause_11lq8w3" label="vegan" name="vegan" typeRef="boolean" biodi:width="192" />
+      <rule id="DecisionRule_1xvps52">
+        <inputEntry id="UnaryTests_04rc4x6">
+          <text>"bread"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_01fpc8s">
+          <text>true</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_07cl5cf">
+        <inputEntry id="UnaryTests_1cv9tkl">
+          <text>"hamburger"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_06njxgs">
+          <text>false</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0y2hdx8">
+        <inputEntry id="UnaryTests_0mzaehs">
+          <text>"salad"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0bzy4lf">
+          <text>true</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1k1czca">
+        <inputEntry id="UnaryTests_1ktf8s8">
+          <text>"tomato"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0991lhs">
+          <text>true</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1vlez2o">
+        <inputEntry id="UnaryTests_178fqgg">
+          <text>"cheddar"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0go3kqw">
+          <text>false</text>
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+  <decision id="Decision_0wjc2c6" name="can eat">
+    <informationRequirement id="InformationRequirement_0qfbryb">
+      <requiredDecision href="#Decision_11lanjr" />
+    </informationRequirement>
+    <informationRequirement id="InformationRequirement_0ez7qgg">
+      <requiredInput href="#InputData_0x0i26m" />
+    </informationRequirement>
+    <informationRequirement id="InformationRequirement_1yuyy2z">
+      <requiredDecision href="#Decision_1fycjtq" />
+    </informationRequirement>
+    <decisionTable id="DecisionTable_0td0s7a">
+      <input id="InputClause_0pm5mt8" label="category">
+        <inputExpression id="LiteralExpression_0sknddr" typeRef="string">
+          <text>category</text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_00nxmfh" label="vegan">
+        <inputExpression id="LiteralExpression_0q6j3ph" typeRef="boolean">
+          <text>vegan</text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_0bgfubm" label="person" biodi:width="192">
+        <inputExpression id="LiteralExpression_1x4icw0" typeRef="string">
+          <text></text>
+        </inputExpression>
+      </input>
+      <output id="OutputClause_1f6a351" label="can eat" typeRef="boolean" />
+      <rule id="DecisionRule_1ikre1d">
+        <inputEntry id="UnaryTests_071pwwn">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1iqdohl">
+          <text>true</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0ash2x4">
+          <text>"vegan"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_089hzwd">
+          <text>true</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0ub06m8">
+        <inputEntry id="UnaryTests_0q1bc5y">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_00axzl4">
+          <text>false</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1ejxmjo">
+          <text>"vegan"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_07n9aqs">
+          <text>false</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0xqj2zq">
+        <inputEntry id="UnaryTests_0ns6rwz">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0a8vz91">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0pthhrd">
+          <text>"carnivore"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_16t27e3">
+          <text>true</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0bkm75s">
+        <inputEntry id="UnaryTests_0iktntl">
+          <text>not("meat","fish")</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_195ug4n">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0q9sn8o">
+          <text>"vegetarian"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1jz18jf">
+          <text>true</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_08evl6y">
+        <inputEntry id="UnaryTests_1lp1nkx">
+          <text>"meat"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0r24ale">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_118nr3i">
+          <text>"vegetarian"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0fel0ut">
+          <text>false</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1umiifu">
+        <inputEntry id="UnaryTests_15jeqm4">
+          <text>"fish"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_07yby76">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1ilem5s">
+          <text>"vegetarian"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1tfniwt">
+          <text>false</text>
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+  <inputData id="InputData_0x0i26m" name="person" />
+  <decision id="Decision_1fycjtq" name="category">
+    <authorityRequirement id="AuthorityRequirement_0lvqglm">
+      <requiredAuthority href="#KnowledgeSource_06shsu8" />
+    </authorityRequirement>
+    <decisionTable id="DecisionTable_19dppw6">
+      <input id="InputClause_0w073oa" label="ingredient">
+        <inputExpression id="LiteralExpression_0bbxwqz" typeRef="string">
+          <text>ingredient</text>
+        </inputExpression>
+      </input>
+      <output id="OutputClause_0g8ur3l" label="category" name="category" typeRef="string" />
+      <rule id="DecisionRule_0kcimru">
+        <inputEntry id="UnaryTests_1bmalbh">
+          <text>"hamburger"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0yqaix1">
+          <text>"meat"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0i19aab">
+        <inputEntry id="UnaryTests_1frnxka">
+          <text>"salad"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0u0gmoy">
+          <text>"vegetables"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1r7lluo">
+        <inputEntry id="UnaryTests_1u95oc4">
+          <text>"tomato"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0odwdkg">
+          <text>"vegetables"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_04w2mwe">
+        <inputEntry id="UnaryTests_1mc7p2j">
+          <text>"bread"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1y8n0tp">
+          <text>"gluten"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_07cfnb8">
+        <inputEntry id="UnaryTests_0kytiwh">
+          <text>"cheddar"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_05mdkrg">
+          <text>"dairy"</text>
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+  <knowledgeSource id="KnowledgeSource_06shsu8" name="ingredient" />
+  <decision id="Decision_1fnzywy">
+    <informationRequirement id="InformationRequirement_1wqb3nt">
+      <requiredDecision href="#Decision_0wjc2c6" />
+    </informationRequirement>
+    <informationRequirement id="InformationRequirement_1dt77np">
+      <requiredInput href="#InputData_0x0i26m" />
+    </informationRequirement>
+    <decisionTable id="DecisionTable_0vnqojl" hitPolicy="COLLECT">
+      <input id="InputClause_0150ixv" label="can eat">
+        <inputExpression id="LiteralExpression_1uzmnd3" typeRef="boolean">
+          <text>caneat</text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_11tsj36" label="person">
+        <inputExpression id="LiteralExpression_0qsnaeh" typeRef="string">
+          <text>person</text>
+        </inputExpression>
+      </input>
+      <output id="OutputClause_0b7e9jd" label="dish" name="eatableDish" typeRef="string" />
+      <rule id="DecisionRule_0w9dfuu">
+        <inputEntry id="UnaryTests_18jh6mv">
+          <text>true</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0af97qm">
+          <text>vegetarian</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_15f0ud2">
+          <text>"hamburger"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1s05z16">
+        <inputEntry id="UnaryTests_1f7vmqc">
+          <text>true</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0wh0c50">
+          <text>vegetarian</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0bgwagk">
+          <text>"pasta"</text>
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+  <dmndi:DMNDI>
+    <dmndi:DMNDiagram>
+      <dmndi:DMNShape id="DMNShape_0s4ykgm" dmnElementRef="Decision_11lanjr">
+        <dc:Bounds height="80" width="180" x="160" y="260" />
+      </dmndi:DMNShape>
+      <dmndi:DMNEdge id="DMNEdge_0zb2ms8" dmnElementRef="InformationRequirement_0qfbryb">
+        <di:waypoint x="250" y="260" />
+        <di:waypoint x="425" y="180" />
+        <di:waypoint x="425" y="160" />
+      </dmndi:DMNEdge>
+      <dmndi:DMNShape id="DMNShape_0alne9w" dmnElementRef="Decision_0wjc2c6">
+        <dc:Bounds height="80" width="180" x="380" y="80" />
+      </dmndi:DMNShape>
+      <dmndi:DMNShape id="DMNShape_080cdzu" dmnElementRef="InputData_0x0i26m">
+        <dc:Bounds height="45" width="125" x="407" y="277" />
+      </dmndi:DMNShape>
+      <dmndi:DMNEdge id="DMNEdge_0ho5kba" dmnElementRef="InformationRequirement_0ez7qgg">
+        <di:waypoint x="470" y="277" />
+        <di:waypoint x="470" y="180" />
+        <di:waypoint x="470" y="160" />
+      </dmndi:DMNEdge>
+      <dmndi:DMNEdge id="DMNEdge_12qfbd7" dmnElementRef="InformationRequirement_1yuyy2z">
+        <di:waypoint x="720" y="260" />
+        <di:waypoint x="515" y="180" />
+        <di:waypoint x="515" y="160" />
+      </dmndi:DMNEdge>
+      <dmndi:DMNShape id="DMNShape_0csy8is" dmnElementRef="Decision_1fycjtq">
+        <dc:Bounds height="80" width="180" x="630" y="260" />
+      </dmndi:DMNShape>
+      <dmndi:DMNShape id="DMNShape_0igqal4" dmnElementRef="KnowledgeSource_06shsu8">
+        <dc:Bounds height="63" width="100" x="330" y="399" />
+      </dmndi:DMNShape>
+      <dmndi:DMNEdge id="DMNEdge_0p5yck5" dmnElementRef="AuthorityRequirement_1rih8jn">
+        <di:waypoint x="341" y="399" />
+        <di:waypoint x="270" y="340" />
+      </dmndi:DMNEdge>
+      <dmndi:DMNEdge id="DMNEdge_0qxnoyf" dmnElementRef="AuthorityRequirement_0lvqglm">
+        <di:waypoint x="430" y="415" />
+        <di:waypoint x="670" y="340" />
+      </dmndi:DMNEdge>
+      <dmndi:DMNShape id="DMNShape_0w60j7x" dmnElementRef="Decision_1fnzywy">
+        <dc:Bounds height="80" width="180" x="570" y="-80" />
+      </dmndi:DMNShape>
+      <dmndi:DMNEdge id="DMNEdge_1xiqm9o" dmnElementRef="InformationRequirement_1wqb3nt">
+        <di:waypoint x="470" y="80" />
+        <di:waypoint x="630" y="20" />
+        <di:waypoint x="630" y="0" />
+      </dmndi:DMNEdge>
+      <dmndi:DMNEdge id="DMNEdge_19wo1s0" dmnElementRef="InformationRequirement_1dt77np">
+        <di:waypoint x="470" y="277" />
+        <di:waypoint x="690" y="20" />
+        <di:waypoint x="690" y="0" />
+      </dmndi:DMNEdge>
+    </dmndi:DMNDiagram>
+  </dmndi:DMNDI>
+</definitions>
