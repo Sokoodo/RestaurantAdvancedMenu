@@ -1,0 +1,19 @@
+{
+	"name":"carbonara",
+	"total_calories":1000000,
+	"ingredients":{	
+		"name":"Pancetta",
+		"category":"meat",
+		"calories": 500
+	},
+	{
+		"name":"Pancetta",
+		"category":"meat",
+		"calories": 500,
+	},
+	{
+		"name":"Pancetta",
+		"category":"meat",
+		"calories": 500,
+	}
+}
