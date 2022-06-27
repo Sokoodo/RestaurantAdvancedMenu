@@ -1,0 +1,905 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:di="http://www.omg.org/spec/DMN/20180521/DI/" id="Definitions_08xryi9" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="4.12.0">
+  <decision id="Decision_1xnjfpg" name="ingredients">
+    <informationRequirement id="InformationRequirement_1okw2on">
+      <requiredInput href="#InputData_0du4qfm" />
+    </informationRequirement>
+    <informationRequirement id="InformationRequirement_18tpvx7">
+      <requiredInput href="#InputData_1xjum4z" />
+    </informationRequirement>
+    <informationRequirement id="InformationRequirement_1w009h8">
+      <requiredInput href="#InputData_0gq0dqs" />
+    </informationRequirement>
+    <informationRequirement id="InformationRequirement_0ga98ew">
+      <requiredInput href="#InputData_0nrxhiq" />
+    </informationRequirement>
+    <informationRequirement id="InformationRequirement_05otd28">
+      <requiredInput href="#InputData_13miymr" />
+    </informationRequirement>
+    <decisionTable id="DecisionTable_16681e3" hitPolicy="COLLECT">
+      <input id="Input_1" label="Vegetarian">
+        <inputExpression id="InputExpression_1" typeRef="boolean">
+          <text>vegetarian</text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_1mkueua" label="Vegan">
+        <inputExpression id="LiteralExpression_01wsb28" typeRef="boolean">
+          <text>vegan</text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_083c2mg" label="Lactose-free">
+        <inputExpression id="LiteralExpression_0mr40m8" typeRef="boolean">
+          <text>lactose_free</text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_0228x4y" label="Gluten-free">
+        <inputExpression id="LiteralExpression_19o9fjy" typeRef="boolean">
+          <text>gluten_free</text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_1iri78e" label="Low calories">
+        <inputExpression id="LiteralExpression_12bw9fe" typeRef="boolean">
+          <text>low_calories</text>
+        </inputExpression>
+      </input>
+      <output id="Output_1" label="Ingredients" name="ingredients" typeRef="string" />
+      <rule id="DecisionRule_0oinc51">
+        <inputEntry id="UnaryTests_176pzkm">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0108ubc">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0y21at4">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0412hll">
+          <text>false</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0vuogt8">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1l541xm">
+          <text>"pasta"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_010xija">
+        <inputEntry id="UnaryTests_05ofncd">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_16p2jh5">
+          <text>false</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1ypnjzg">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0f2l7z7">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0918vmh">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0lyna44">
+          <text>"egg"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_12d22kx">
+        <inputEntry id="UnaryTests_0oppcdm">
+          <text>false</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1r7knyq">
+          <text>false</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_00yjims">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1mjqrip">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_04m1ww4">
+          <text>false</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1btghq6">
+          <text>"bacon"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1x8fuxr">
+        <inputEntry id="UnaryTests_1pznq0s">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_07qty9x">
+          <text>false</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0gmyts7">
+          <text>false</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1bu4xt8">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1mpf9y2">
+          <text>false</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1hhnx64">
+          <text>"pecorino cheese"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1p14i0q">
+        <inputEntry id="UnaryTests_1oe893d">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_17snx3v">
+          <text>false</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1i881ts">
+          <text>false</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1x3vlra">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0rcenca">
+          <text>false</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1vggcbf">
+          <text>"mozzarella cheese"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0s4kd0u">
+        <inputEntry id="UnaryTests_0yx2nju">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0hfbux0">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1b9aukt">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0jsz5pu">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1hdj24k">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_16bgl2g">
+          <text>"tomato"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1v6ulyc">
+        <inputEntry id="UnaryTests_1ydiuyj">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_15o9mc0">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1qomegg">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0eox4eb">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0by8nh0">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0lmtfjo">
+          <text>"lettuce"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1ivbdja">
+        <inputEntry id="UnaryTests_05efzyd">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1homco9">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1t9ix4q">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1vzyj8o">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0hskr72">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0uh79fg">
+          <text>"onion"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0f6gh6z">
+        <inputEntry id="UnaryTests_0tskw6r">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0fpoh7b">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0jvmb05">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1s0472x">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1pmyhp9">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1g7dp3o">
+          <text>"cucumber"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1p2kziw">
+        <inputEntry id="UnaryTests_0iehyuq">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1xlq31n">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0ugp47p">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0cag2i7">
+          <text>false</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1snrwqx">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1ctnrom">
+          <text>"flour"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0h66isy">
+        <inputEntry id="UnaryTests_0tyrwv4">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1njp0a2">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0ptl5wf">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_16isyy1">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1j79ri6">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0m3fu5v">
+          <text>"garlic"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1idewnn">
+        <inputEntry id="UnaryTests_0yzn9sc">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1ep3pfx">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_12xrhic">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_00rz6vb">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0rx6u6s">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1yxze2x">
+          <text>"hot pepper"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1mcqkky">
+        <inputEntry id="UnaryTests_1p3bkvp">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0kvtypu">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1gm8gz5">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1ojkcs4">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0wlxpni">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0sf3xb8">
+          <text>"rice"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1m6ou76">
+        <inputEntry id="UnaryTests_0ao7a48">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_025hcg8">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0tt6hvm">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1p6lqt1">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0e4klp4">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1aks4a4">
+          <text>"mushroom"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1fteku1">
+        <inputEntry id="UnaryTests_0wr4mrp">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_02g5cvh">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_19krxp7">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_18b81u3">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0jwv72u">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1syocs7">
+          <text>"parsley"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_12mcceo">
+        <inputEntry id="UnaryTests_0bomsi8">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0u6trch">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0pg650x">
+          <text>false</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1pezybw">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_06qzup6">
+          <text>false</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1w77wu1">
+          <text>"butter"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_10rfdfe">
+        <inputEntry id="UnaryTests_14szbw8">
+          <text>false</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_07gqgbp">
+          <text>false</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0ypgyah">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0txlv78">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_01xo88p">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_07heqy4">
+          <text>"ham"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0pker8n">
+        <inputEntry id="UnaryTests_1xrhsse">
+          <text>false</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0gl6vlf">
+          <text>false</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0dq4tlv">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0f14ppw">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_09pc2wn">
+          <text>false</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1vnu9vc">
+          <text>"pepperoni"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0n8x33e">
+        <inputEntry id="UnaryTests_1h56hmb">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0udhsck">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1pa8oia">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0qs2swy">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_01ag1ab">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1yhwka3">
+          <text>"aubergine"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_18lro42">
+        <inputEntry id="UnaryTests_1tz0l3c">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1n2t32k">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0cp7fdz">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1vfwiag">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1sx74x9">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0iz48cl">
+          <text>"zucchini"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0uepjo1">
+        <inputEntry id="UnaryTests_16y62xe">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0prdalt">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0xcm8ax">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_17ixnbt">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0em8duu">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_06jn8sf">
+          <text>"potato"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1fpwqgj">
+        <inputEntry id="UnaryTests_00t8isc">
+          <text>false</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0441t9x">
+          <text>false</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1d68w5k">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0zyijtu">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0j8jnde">
+          <text>false</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_18g5yc0">
+          <text>"beef"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1h8ve94">
+        <inputEntry id="UnaryTests_0rzhjos">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1r4loeo">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_13psbtz">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0joq11w">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_15bausp">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0mcfo3q">
+          <text>"apple"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1ba6wwj">
+        <inputEntry id="UnaryTests_0hag746">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1c8181k">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1lkwlh3">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0puotbp">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_06yzqcp">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1jciygu">
+          <text>"lemon"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_00lxsda">
+        <inputEntry id="UnaryTests_1ol2djm">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_08tgm4r">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_071r7q4">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1dfsabn">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1cmvdz2">
+          <text>false</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_158f13i">
+          <text>"sugar"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_09ad2qv">
+        <inputEntry id="UnaryTests_1vro8x4">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_05fs7o0">
+          <text>false</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_05zfxdt">
+          <text>false</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0hgnmry">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1w6g28d">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0k6b4kz">
+          <text>"milk"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0kbd3nb">
+        <inputEntry id="UnaryTests_0mv139n">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_01gvk5s">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0b6m1hd">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1p8ifih">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1ppjpcl">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1023llr">
+          <text>"coffee"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1obqreo">
+        <inputEntry id="UnaryTests_11v8d50">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_076tnn6">
+          <text>false</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0apgucv">
+          <text>false</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1fx2v0b">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_15pq724">
+          <text>false</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0d1dx0w">
+          <text>"mascarpone cheese"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1ozqdwf">
+        <inputEntry id="UnaryTests_1hy2qta">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0nz9ixi">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_032d5p7">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1yibsd0">
+          <text>false</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_07apjy9">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0f0zrf4">
+          <text>"cookie"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0wvw9ef">
+        <inputEntry id="UnaryTests_1neh0dp">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0qmsmhm">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0vthoj7">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_15wxlyb">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0hnbw5r">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_11z6rk7">
+          <text>"banana"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1u6eoh3">
+        <inputEntry id="UnaryTests_1gvqub8">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_09m9xou">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1cjyalk">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0qpq4e1">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_12p14x0">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1xe7v79">
+          <text>"grape"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1xn9zc0">
+        <inputEntry id="UnaryTests_046bvsn">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0w5ag6l">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0uk7hxp">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0zwl4u4">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_067xdz9">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0t6sd6t">
+          <text>"kiwi"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1d9w9ac">
+        <inputEntry id="UnaryTests_1bbhmqp">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0wfgjts">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0w6qg0c">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1vfvsnc">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_03yep2x">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0y2i3ls">
+          <text>"rocket salad"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0dl7yf7">
+        <inputEntry id="UnaryTests_1pw2q0r">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1dfl4no">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0eqbwqb">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_037a3eh">
+          <text>false</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_17ihe5b">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1sh9yjt">
+          <text>"breadcrumbs"</text>
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+  <decision id="Decision_1tk686w" name="meals">
+    <informationRequirement id="InformationRequirement_1gzgn4t">
+      <requiredDecision href="#Decision_1xnjfpg" />
+    </informationRequirement>
+    <decisionTable id="DecisionTable_0da05r1" hitPolicy="COLLECT">
+      <input id="InputClause_16e666r" label="Ingredients">
+        <inputExpression id="LiteralExpression_05yaxtn" typeRef="string">
+          <text>ingredients</text>
+        </inputExpression>
+      </input>
+      <output id="OutputClause_01uwenj" label="Meal" name="meal" typeRef="string" />
+      <rule id="DecisionRule_19zos4c">
+        <inputEntry id="UnaryTests_17c3st0">
+          <text>list contains(ingredients, "pasta") and list contains(ingredients, "bacon") and list contains(ingredients, "pecorino cheese") and list contains(ingredients, "egg")</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_05ej1lf">
+          <text>"pasta carbonara"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_16xp3iv">
+        <inputEntry id="UnaryTests_1or61tz">
+          <text>list contains(ingredients, "lettuce") and list contains(ingredients, "tomato") and list contains(ingredients, "cucumber") and list contains(ingredients, "onion")</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_19e5i1l">
+          <text>"mixed salad"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0q7xer2">
+        <inputEntry id="UnaryTests_0iu1cko">
+          <text>list contains(ingredients, "flour") and list contains(ingredients, "tomato") and list contains(ingredients, "mozzarella cheese")</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1ba3cai">
+          <text>"pizza margherita"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1gcxvb0">
+        <inputEntry id="UnaryTests_0n775qm">
+          <text>list contains(ingredients, "pasta") and list contains(ingredients, "tomato") and list contains(ingredients, "garlic") and list contains(ingredients, "hot pepper")</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_02ury9p">
+          <text>"pasta arrabbiata"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0z3x4av">
+        <inputEntry id="UnaryTests_1xi9juo">
+          <text>list contains(ingredients, "rice") and list contains(ingredients, "mushroom") and list contains(ingredients, "parsley") and list contains(ingredients, "onion")</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1m8pwdp">
+          <text>"mushroom risotto"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0ft0dpd">
+        <inputEntry id="UnaryTests_0xnf4k2">
+          <text>list contains(ingredients, "beef") and list contains(ingredients, "rocket salad") and list contains(ingredients, "tomato")</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0qj8an0">
+          <text>"beef steak"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_079qn88">
+        <inputEntry id="UnaryTests_0x6h5gt">
+          <text>list contains(ingredients, "flour") and list contains(ingredients, "tomato") and list contains(ingredients, "mozzarella cheese") and list contains(ingredients, "pepperoni")</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_07pen0p">
+          <text>"pepperoni pizza"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0w96k33">
+        <inputEntry id="UnaryTests_1eknvvq">
+          <text>list contains(ingredients, "flour") and list contains(ingredients, "mushroom") and list contains(ingredients, "mozzarella cheese") and list contains(ingredients, "ham")</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1v9o204">
+          <text>"pizza boscaiola"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0xbok86">
+        <inputEntry id="UnaryTests_0awp1hj">
+          <text>list contains(ingredients, "aubergine") and list contains(ingredients, "zucchini") and list contains(ingredients, "tomato") and list contains(ingredients, "onion")</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0f9yjvi">
+          <text>"grilled vegetables"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0dp8hcx">
+        <inputEntry id="UnaryTests_1td35rz">
+          <text>list contains(ingredients, "potato") and list contains(ingredients, "onion") and list contains(ingredients, "mozzarella cheese") and list contains(ingredients, "breadcrumbs")</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0yreikj">
+          <text>"mixed fried food"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0jalw95">
+        <inputEntry id="UnaryTests_1s5od0o">
+          <text>list contains(ingredients, "mascarpone cheese") and list contains(ingredients, "egg") and list contains(ingredients, "sugar") and list contains(ingredients, "coffee") and list contains(ingredients, "cookie")</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0ts3gnf">
+          <text>"tiramisù"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0lej3fd">
+        <inputEntry id="UnaryTests_1w2ug1f">
+          <text>list contains(ingredients, "apple") and list contains(ingredients, "lemon") and list contains(ingredients, "sugar") and list contains(ingredients, "butter") and list contains(ingredients, "milk") and list contains(ingredients, "flour")</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0a4h0q6">
+          <text>"apple pie"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_11p7xfl">
+        <inputEntry id="UnaryTests_1mt7zdf">
+          <text>list contains(ingredients, "apple") and list contains(ingredients, "banana") and list contains(ingredients, "grape") and list contains(ingredients, "kiwi")</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1h948l7">
+          <text>"mixed fruit"</text>
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+  <inputData id="InputData_0du4qfm" name="vegetarian" />
+  <inputData id="InputData_1xjum4z" name="lactose_free" />
+  <inputData id="InputData_0gq0dqs" name="low_calories" />
+  <inputData id="InputData_0nrxhiq" name="gluten_free" />
+  <inputData id="InputData_13miymr" name="vegan" />
+  <dmndi:DMNDI>
+    <dmndi:DMNDiagram>
+      <dmndi:DMNShape dmnElementRef="Decision_1xnjfpg">
+        <dc:Bounds height="80" width="180" x="390" y="250" />
+      </dmndi:DMNShape>
+      <dmndi:DMNShape id="DMNShape_1d6wo4j" dmnElementRef="Decision_1tk686w">
+        <dc:Bounds height="80" width="180" x="390" y="80" />
+      </dmndi:DMNShape>
+      <dmndi:DMNEdge id="DMNEdge_0n9llkv" dmnElementRef="InformationRequirement_1gzgn4t">
+        <di:waypoint x="480" y="250" />
+        <di:waypoint x="480" y="180" />
+        <di:waypoint x="480" y="160" />
+      </dmndi:DMNEdge>
+      <dmndi:DMNShape id="DMNShape_0qshprm" dmnElementRef="InputData_0du4qfm">
+        <dc:Bounds height="45" width="125" x="157" y="428" />
+      </dmndi:DMNShape>
+      <dmndi:DMNEdge id="DMNEdge_13fvfmv" dmnElementRef="InformationRequirement_1okw2on">
+        <di:waypoint x="220" y="428" />
+        <di:waypoint x="420" y="350" />
+        <di:waypoint x="420" y="330" />
+      </dmndi:DMNEdge>
+      <dmndi:DMNShape id="DMNShape_08uik8u" dmnElementRef="InputData_1xjum4z">
+        <dc:Bounds height="45" width="125" x="417" y="428" />
+      </dmndi:DMNShape>
+      <dmndi:DMNEdge id="DMNEdge_1xbi26k" dmnElementRef="InformationRequirement_18tpvx7">
+        <di:waypoint x="480" y="428" />
+        <di:waypoint x="480" y="350" />
+        <di:waypoint x="480" y="330" />
+      </dmndi:DMNEdge>
+      <dmndi:DMNShape id="DMNShape_1afhmpg" dmnElementRef="InputData_0gq0dqs">
+        <dc:Bounds height="45" width="125" x="677" y="428" />
+      </dmndi:DMNShape>
+      <dmndi:DMNEdge id="DMNEdge_1jan60i" dmnElementRef="InformationRequirement_1w009h8">
+        <di:waypoint x="740" y="428" />
+        <di:waypoint x="540" y="350" />
+        <di:waypoint x="540" y="330" />
+      </dmndi:DMNEdge>
+      <dmndi:DMNShape id="DMNShape_0g6g8bb" dmnElementRef="InputData_0nrxhiq">
+        <dc:Bounds height="45" width="125" x="547" y="428" />
+      </dmndi:DMNShape>
+      <dmndi:DMNEdge id="DMNEdge_15tk9g7" dmnElementRef="InformationRequirement_0ga98ew">
+        <di:waypoint x="610" y="428" />
+        <di:waypoint x="510" y="350" />
+        <di:waypoint x="510" y="330" />
+      </dmndi:DMNEdge>
+      <dmndi:DMNShape id="DMNShape_1uhz5a5" dmnElementRef="InputData_13miymr">
+        <dc:Bounds height="45" width="125" x="287" y="428" />
+      </dmndi:DMNShape>
+      <dmndi:DMNEdge id="DMNEdge_0n4gica" dmnElementRef="InformationRequirement_05otd28">
+        <di:waypoint x="350" y="428" />
+        <di:waypoint x="450" y="350" />
+        <di:waypoint x="450" y="330" />
+      </dmndi:DMNEdge>
+    </dmndi:DMNDiagram>
+  </dmndi:DMNDI>
+</definitions>
