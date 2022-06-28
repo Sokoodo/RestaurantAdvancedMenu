@@ -1,25 +1,65 @@
-
 vegetarian(pecorino_cheese).
+vegetarian(mozzarella_cheese).
 vegetarian(egg).
 vegetarian(X) :- vegan(X).
+vegan(rocket).
 vegan(flour).
 vegan(tomato).
 vegan(pasta).
 vegan(onion).
 vegan(lettuce).
-
+vegan(hot_pepper).
+vegan(garlic).
+vegan(mushroom).
+vegan(rice).
+vegan(parsley).
+vegan(potato).
+vegan(breadcrumbs).
 carnivore(bacon).
+carnivore(beef).
 carnivore(X) :- vegetarian(X).
 
 has_lactose(pecorino_cheese).
-
+has_lactose(mozzarella_cheese).
 has_gluten(pasta).
+has_gluten(flour).
+has_gluten(breadcrumbs).
+
+has_low_calories(rocket).
+has_low_calories(flour).
+has_low_calories(tomato).
+has_low_calories(pasta).
+has_low_calories(onion).
+has_low_calories(lettuce).
+has_low_calories(hot_pepper).
+has_low_calories(garlic).
+has_low_calories(mushroom).
+has_low_calories(rice).
+has_low_calories(parsley).
+has_low_calories(potato).
+has_low_calories(breadcrumbs).
+
+non_lactose(I) :- 
+    carnivore(I),
+    not(has_lactose(I)).
+
+non_gluten(I) :- 
+    carnivore(I),
+    not(has_gluten(I)).
+
+non_low_calories(I) :- 
+    carnivore(I),
+    not(has_low_calories(I)).
 
 meal(pizza_margherita).
 meal(carbonara).
 meal(salad).
+meal(beef_steak).
+meal(pasta_arrabbiata).
+meal(risotto_funghi).
+meal(mixed_fried_food).
 
-ingredient(pizza_margherita, cheese).
+ingredient(pizza_margherita, mozzarella_cheese).
 ingredient(pizza_margherita, flour).
 ingredient(pizza_margherita, tomato).
 ingredient(carbonara, pasta).
@@ -29,6 +69,21 @@ ingredient(carbonara, egg).
 ingredient(salad, tomato).
 ingredient(salad, onion).
 ingredient(salad, lettuce).
+ingredient(beef_steak, beef).
+ingredient(beef_steak, tomato).
+ingredient(beef_steak, rocket).
+ingredient(pasta_arrabbiata, pasta).
+ingredient(pasta_arrabbiata, tomato).
+ingredient(pasta_arrabbiata, garlic).
+ingredient(pasta_arrabbiata, hot_pepper).
+ingredient(risotto_funghi, rice).
+ingredient(risotto_funghi, mushroom).
+ingredient(risotto_funghi, onion).
+ingredient(risotto_funghi, parsley).
+ingredient(mixed_fried_food, potato).
+ingredient(mixed_fried_food, breadcrumbs).
+ingredient(mixed_fried_food, onion).
+
 
 non_vegetarian_menu(Meal) :- 
     ingredient(Meal, Ing), 
@@ -38,17 +93,34 @@ vegetarian_menu(Meal) :-
 
 non_vegan_menu(Meal) :- 
     ingredient(Meal, Ing), 
-    not(vegan(Ing)),
-    write(Ing).
+    not(vegan(Ing)).
+
 vegan_menu(Meal) :- 
     not(non_vegan_menu(Meal)).
 
+non_carnivore_menu(Meal) :-
+    ingredient(Meal, Ing),
+    not(carnivore(Ing)).
 carnivore_menu(Meal) :-
-    distinct(
-        ingredient(Meal, Ing),
-        carnivore(Ing)
-        ),
-    write(Meal).
+    not(non_carnivore_menu(Meal)).
+
+non_lactose_menu(Meal) :-
+    ingredient(Meal, Ing),
+    not(non_lactose(Ing)).
+lactose_menu(Meal) :-
+    not(non_lactose_menu(Meal)).
+
+non_gluten_menu(Meal) :-
+    ingredient(Meal, Ing),
+    not(non_gluten(Ing)).
+gluten_menu(Meal) :-
+    not(non_gluten_menu(Meal)).
+
+non_low_calories_menu(Meal) :-
+	ingredient(Meal, Ing),
+    not(non_low_calories(Ing)).
+low_calories_menu(Meal) :-
+    not(non_low_calories_menu(Meal)).
 
 menu(X) :- repeat,
     nl,
@@ -121,7 +193,7 @@ get_menu(1,1,2,2) :-
 
 pippo(Type,Lactose_intolerant,Gluten_intolerant,Calorie_conscious, X) :-
     nl,
-    Type=:=1->  
+      Type=:=1->  
     	nl,write('You are carnivore'),
     	nl,write(Lactose_intolerant),
     	nl,write(Gluten_intolerant),
@@ -130,14 +202,46 @@ pippo(Type,Lactose_intolerant,Gluten_intolerant,Calorie_conscious, X) :-
     ;
     Type=:=2->  write('You are vegetarian');
     Type=:=3->  write('You are vegan').
+    
+type(Type, Meal) :-
+    Type=:=1->
+    	meal(Meal),
+    	vegetarian_menu(Meal);
+    Type=:=2->
+    	meal(Meal),
+    	vegan_menu(Meal);
+    Type=:=3->
+   		meal(Meal),
+    	carnivore_menu(Meal).
 
+lactose_free(Type, Meal, Lactose_intolerant) :-
+    Lactose_intolerant=:=1->
+    	meal(Meal),
+    	type(Type, Meal),
+		lactose_menu(Meal);
+    meal(Meal),
+    type(Type, Meal).
 
-/*davide(Person,X) :-
-    write("ciao"),
-    meal(X).*/
-    
-    
-    
+gluten_free(Type, Meal, Gluten_intolerant) :-
+    Gluten_intolerant=:=1->
+    	meal(Meal),
+    	type(Type, Meal),
+		gluten_menu(Meal);
+    meal(Meal),
+    type(Type, Meal).
+
+low_calories(Type, Meal, Low_calories) :-
+    Low_calories=:=1->
+    	meal(Meal),
+    	type(Type, Meal),
+		low_calories_menu(Meal);
+    meal(Meal),
+    type(Type, Meal).
+
+final_menu(Type,Meal,Lactose_intolerant,Gluten_intolerant,Low_calories) :-
+	lactose_free(Type,Meal,Lactose_intolerant),
+    gluten_free(Type,Meal,Gluten_intolerant),
+    low_calories(Type, Meal, Low_calories).
     
     
     
