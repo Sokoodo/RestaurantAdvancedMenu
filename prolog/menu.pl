@@ -21,6 +21,7 @@ carnivore(X) :- vegetarian(X).
 
 has_lactose(pecorino_cheese).
 has_lactose(mozzarella_cheese).
+
 has_gluten(pasta).
 has_gluten(flour).
 has_gluten(breadcrumbs).
@@ -49,7 +50,7 @@ non_gluten(I) :-
 
 non_low_calories(I) :- 
     carnivore(I),
-    not(has_low_calories(I)).
+    has_low_calories(I).
 
 meal(pizza_margherita).
 meal(carbonara).
@@ -121,8 +122,48 @@ non_low_calories_menu(Meal) :-
     not(non_low_calories(Ing)).
 low_calories_menu(Meal) :-
     not(non_low_calories_menu(Meal)).
+    
+type(Type, Meal) :-
+    Type=:=1->
+   		meal(Meal),
+    	carnivore_menu(Meal);
+    Type=:=2->
+    	meal(Meal),
+    	vegetarian_menu(Meal);
+    Type=:=3->
+    	meal(Meal),
+    	vegan_menu(Meal).
 
-menu(X) :- repeat,
+lactose_free(Type, Meal, Lactose_intolerant) :-
+    Lactose_intolerant=:=1->
+    	meal(Meal),
+    	type(Type, Meal),
+		lactose_menu(Meal);
+    meal(Meal),
+    type(Type, Meal).
+
+gluten_free(Type, Meal, Gluten_intolerant) :-
+    Gluten_intolerant=:=1->
+    	meal(Meal),
+    	type(Type, Meal),
+		gluten_menu(Meal);
+    meal(Meal),
+    type(Type, Meal).
+
+low_calories(Type, Meal, Low_calories) :-
+    Low_calories=:=1->
+    	meal(Meal),
+    	type(Type, Meal),
+		low_calories_menu(Meal);
+    meal(Meal),
+    type(Type, Meal).
+
+final_menu(Type,Meal,Lactose_intolerant,Gluten_intolerant,Low_calories) :-
+	lactose_free(Type,Meal,Lactose_intolerant),
+    gluten_free(Type,Meal,Gluten_intolerant),
+    low_calories(Type, Meal, Low_calories).
+    
+menu(Meal) :-
     nl,
     write('WELCOME TO THE KEBI RESTAURANT!'),nl,nl,
     write('Please help us show which dishes are most suitable for you by providing information about your usual diet :)'),
@@ -155,105 +196,14 @@ menu(X) :- repeat,
     nl,
     
     nl,
-    write('Are you calorie-conscious'),nl,
+    write('Do you want to eat low-calorie meals?'),nl,
     write('1. Yes'),nl,
     write('2. No'),nl,nl,
     write('Enter your choice number below:'),nl,
-    read(Calorie_conscious), Calorie_conscious>0, Calorie_conscious =<2,
-    write('Your choice is = '), write(Calorie_conscious),
-    
-    
-    /*nl,nl,
-    write(Type),nl,
-    write(Lactose_intolerant),nl,
-    write(Gluten_intolerant),nl,
-    write(Calorie_conscious),nl,*/
-    
-    /*show_menu(Choice), Choice=6,*/ 
-    pippo(Type,Lactose_intolerant,Gluten_intolerant,Calorie_conscious, X),
-    !.
-
-
-/* get_menu(Type,Lactose_intolerant,Gluten_intolerant,Calorie_conscious) :- */
-get_menu(1,2,2,2) :-
+    read(Low_calories), Low_calories>0, Low_calories =<2,
+    write('Your choice is = '), write(Low_calories),
     nl,
-    write('You are:'),nl,
-    write('- carnivore'),nl,
-    write('- non lactose-intolerant'),nl,
-    write('- non gluten-intolerant'),nl,
-    write('- non calorie-conscious'),nl.
-
-get_menu(1,1,2,2) :-
+    
     nl,
-    write('You are:'),nl,
-    write('- carnivore'),nl,
-    write('- non lactose-intolerant'),nl,
-    write('- non gluten-intolerant'),nl,
-    write('- non calorie-conscious'),nl.
-
-pippo(Type,Lactose_intolerant,Gluten_intolerant,Calorie_conscious, X) :-
-    nl,
-      Type=:=1->  
-    	nl,write('You are carnivore'),
-    	nl,write(Lactose_intolerant),
-    	nl,write(Gluten_intolerant),
-    	nl,write(Calorie_conscious),
-    	nl,meal(X)
-    ;
-    Type=:=2->  write('You are vegetarian');
-    Type=:=3->  write('You are vegan').
-    
-type(Type, Meal) :-
-    Type=:=1->
-    	meal(Meal),
-    	vegetarian_menu(Meal);
-    Type=:=2->
-    	meal(Meal),
-    	vegan_menu(Meal);
-    Type=:=3->
-   		meal(Meal),
-    	carnivore_menu(Meal).
-
-lactose_free(Type, Meal, Lactose_intolerant) :-
-    Lactose_intolerant=:=1->
-    	meal(Meal),
-    	type(Type, Meal),
-		lactose_menu(Meal);
-    meal(Meal),
-    type(Type, Meal).
-
-gluten_free(Type, Meal, Gluten_intolerant) :-
-    Gluten_intolerant=:=1->
-    	meal(Meal),
-    	type(Type, Meal),
-		gluten_menu(Meal);
-    meal(Meal),
-    type(Type, Meal).
-
-low_calories(Type, Meal, Low_calories) :-
-    Low_calories=:=1->
-    	meal(Meal),
-    	type(Type, Meal),
-		low_calories_menu(Meal);
-    meal(Meal),
-    type(Type, Meal).
-
-final_menu(Type,Meal,Lactose_intolerant,Gluten_intolerant,Low_calories) :-
-	lactose_free(Type,Meal,Lactose_intolerant),
-    gluten_free(Type,Meal,Gluten_intolerant),
-    low_calories(Type, Meal, Low_calories).
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+    write('Based on the preferences you provided, this is the list of dishes that meet your needs:'),nl,nl,
+    final_menu(Type,Meal,Lactose_intolerant,Gluten_intolerant,Low_calories).
