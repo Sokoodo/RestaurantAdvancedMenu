@@ -1,8 +1,13 @@
 vegetarian(pecorino_cheese).
 vegetarian(mozzarella_cheese).
+vegetarian(mascarpone_cheese).
 vegetarian(egg).
+vegetarian(cookie).
+vegetarian(butter).
+vegetarian(milk).
 vegetarian(X) :- vegan(X).
-vegan(rocket).
+
+vegan(rocket_salad).
 vegan(flour).
 vegan(tomato).
 vegan(pasta).
@@ -15,18 +20,34 @@ vegan(rice).
 vegan(parsley).
 vegan(potato).
 vegan(breadcrumbs).
+vegan(aubergine).
+vegan(zucchini).
+vegan(sugar).
+vegan(coffee).
+vegan(apple).
+vegan(lemon).
+vegan(banana).
+vegan(grape).
+vegan(kiwi).
+
 carnivore(bacon).
 carnivore(beef).
+carnivore(pepperoni).
+carnivore(ham).
 carnivore(X) :- vegetarian(X).
 
 has_lactose(pecorino_cheese).
 has_lactose(mozzarella_cheese).
+has_lactose(mascarpone_cheese).
+has_lactose(butter).
+has_lactose(milk).
 
 has_gluten(pasta).
 has_gluten(flour).
 has_gluten(breadcrumbs).
+has_gluten(cookie).
 
-has_low_calories(rocket).
+has_low_calories(rocket_salad).
 has_low_calories(flour).
 has_low_calories(tomato).
 has_low_calories(pasta).
@@ -39,6 +60,14 @@ has_low_calories(rice).
 has_low_calories(parsley).
 has_low_calories(potato).
 has_low_calories(breadcrumbs).
+has_low_calories(aubergine).
+has_low_calories(zucchini).
+has_low_calories(coffee).
+has_low_calories(apple).
+has_low_calories(lemon).
+has_low_calories(banana).
+has_low_calories(grape).
+has_low_calories(kiwi).
 
 non_lactose(I) :- 
     carnivore(I),
@@ -52,38 +81,83 @@ non_low_calories(I) :-
     carnivore(I),
     has_low_calories(I).
 
-meal(pizza_margherita).
-meal(carbonara).
-meal(salad).
-meal(beef_steak).
+
+/* First dishes */
+meal(pasta_carbonara).
 meal(pasta_arrabbiata).
-meal(risotto_funghi).
+meal(mushroom_risotto).
+
+/* Main dishes */
+meal(pizza_margherita).
+meal(pepperoni_pizza).
+meal(pizza_boscaiola).
+meal(beef_steak).
+
+/* Side dishes */
+meal(mixed_salad).
+meal(grilled_vegetables).
 meal(mixed_fried_food).
 
-ingredient(pizza_margherita, mozzarella_cheese).
-ingredient(pizza_margherita, flour).
-ingredient(pizza_margherita, tomato).
-ingredient(carbonara, pasta).
-ingredient(carbonara, pecorino_cheese).
-ingredient(carbonara, bacon).
-ingredient(carbonara, egg).
-ingredient(salad, tomato).
-ingredient(salad, onion).
-ingredient(salad, lettuce).
-ingredient(beef_steak, beef).
-ingredient(beef_steak, tomato).
-ingredient(beef_steak, rocket).
+/* Desserts */
+meal(tiramisu).
+meal(apple_pie).
+meal(mixed_fruit).
+
+ingredient(pasta_carbonara, pasta).
+ingredient(pasta_carbonara, pecorino_cheese).
+ingredient(pasta_carbonara, bacon).
+ingredient(pasta_carbonara, egg).
 ingredient(pasta_arrabbiata, pasta).
 ingredient(pasta_arrabbiata, tomato).
 ingredient(pasta_arrabbiata, garlic).
 ingredient(pasta_arrabbiata, hot_pepper).
-ingredient(risotto_funghi, rice).
-ingredient(risotto_funghi, mushroom).
-ingredient(risotto_funghi, onion).
-ingredient(risotto_funghi, parsley).
+ingredient(mushroom_risotto, rice).
+ingredient(mushroom_risotto, mushroom).
+ingredient(mushroom_risotto, onion).
+ingredient(mushroom_risotto, parsley).
+
+ingredient(pizza_margherita, mozzarella_cheese).
+ingredient(pizza_margherita, flour).
+ingredient(pizza_margherita, tomato).
+ingredient(pepperoni_pizza, mozzarella_cheese).
+ingredient(pepperoni_pizza, flour).
+ingredient(pepperoni_pizza, tomato).
+ingredient(pepperoni_pizza, pepperoni).
+ingredient(pizza_boscaiola, mozzarella_cheese).
+ingredient(pizza_boscaiola, flour).
+ingredient(pizza_boscaiola, mushroom).
+ingredient(pizza_boscaiola, ham).
+ingredient(beef_steak, beef).
+ingredient(beef_steak, tomato).
+ingredient(beef_steak, rocket_salad).
+
+ingredient(mixed_salad, tomato).
+ingredient(mixed_salad, onion).
+ingredient(mixed_salad, lettuce).
+ingredient(grilled_vegetables, aubergine).
+ingredient(grilled_vegetables, zucchini).
+ingredient(grilled_vegetables, tomato).
+ingredient(grilled_vegetables, onion).
 ingredient(mixed_fried_food, potato).
 ingredient(mixed_fried_food, breadcrumbs).
 ingredient(mixed_fried_food, onion).
+ingredient(mixed_fried_food, mozzarella_cheese).
+
+ingredient(tiramisu, mascarpone_cheese).
+ingredient(tiramisu, egg).
+ingredient(tiramisu, sugar).
+ingredient(tiramisu, coffee).
+ingredient(tiramisu, cookie).
+ingredient(apple_pie, apple).
+ingredient(apple_pie, lemon).
+ingredient(apple_pie, sugar).
+ingredient(apple_pie, butter).
+ingredient(apple_pie, milk).
+ingredient(apple_pie, flour).
+ingredient(mixed_fruit, apple).
+ingredient(mixed_fruit, banana).
+ingredient(mixed_fruit, grape).
+ingredient(mixed_fruit, kiwi).
 
 
 non_vegetarian_menu(Meal) :- 
@@ -196,7 +270,7 @@ menu(Meal) :-
     nl,
     
     nl,
-    write('Do you want to eat low-calorie meals?'),nl,
+    write('Do you want to eat low-calorie dishes?'),nl,
     write('1. Yes'),nl,
     write('2. No'),nl,nl,
     write('Enter your choice number below:'),nl,
