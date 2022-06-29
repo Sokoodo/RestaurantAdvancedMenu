@@ -1,252 +1,247 @@
 <?xml version="1.0"?>
-<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+<rdf:RDF xmlns="http://www.semanticweb.org/tommaso/ontologies/2022/5/untitled-ontology-5"
      xml:base="http://www.semanticweb.org/tommaso/ontologies/2022/5/untitled-ontology-5"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:menu="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-     ontologyIRI="http://www.semanticweb.org/tommaso/ontologies/2022/5/untitled-ontology-5">
-    <Prefix name="" IRI="http://www.semanticweb.org/tommaso/ontologies/2022/5/untitled-ontology-5#"/>
-    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
-    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
-    <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
-    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
-    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
-    <Declaration>
-        <Class IRI="#Guest"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Ingredient"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Meal"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#contains"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="#has_gluten"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="#has_lactose"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="#has_low_calories"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#bacon"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#carbonara"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#carnivore"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#egg"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#gluten"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#lactose"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#low_calories"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#margherita"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#pasta"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#pecorino"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#vegan"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#vegetarian"/>
-    </Declaration>
-    <ClassAssertion>
-        <Class IRI="#Ingredient"/>
-        <NamedIndividual IRI="#bacon"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#Meal"/>
-        <NamedIndividual IRI="#carbonara"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#Guest"/>
-        <NamedIndividual IRI="#carnivore"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#Ingredient"/>
-        <NamedIndividual IRI="#egg"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#Guest"/>
-        <NamedIndividual IRI="#gluten"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#Guest"/>
-        <NamedIndividual IRI="#lactose"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#Guest"/>
-        <NamedIndividual IRI="#low_calories"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#Meal"/>
-        <NamedIndividual IRI="#margherita"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#Ingredient"/>
-        <NamedIndividual IRI="#pasta"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#Ingredient"/>
-        <NamedIndividual IRI="#pecorino"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#Guest"/>
-        <NamedIndividual IRI="#vegan"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#Guest"/>
-        <NamedIndividual IRI="#vegetarian"/>
-    </ClassAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="#contains"/>
-        <NamedIndividual IRI="#carbonara"/>
-        <NamedIndividual IRI="#bacon"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="#contains"/>
-        <NamedIndividual IRI="#carbonara"/>
-        <NamedIndividual IRI="#egg"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="#contains"/>
-        <NamedIndividual IRI="#carbonara"/>
-        <NamedIndividual IRI="#pasta"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="#contains"/>
-        <NamedIndividual IRI="#carbonara"/>
-        <NamedIndividual IRI="#pecorino"/>
-    </ObjectPropertyAssertion>
-    <DataPropertyAssertion>
-        <DataProperty IRI="#has_gluten"/>
-        <NamedIndividual IRI="#bacon"/>
-        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">false</Literal>
-    </DataPropertyAssertion>
-    <DataPropertyAssertion>
-        <DataProperty IRI="#has_lactose"/>
-        <NamedIndividual IRI="#bacon"/>
-        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">false</Literal>
-    </DataPropertyAssertion>
-    <DataPropertyAssertion>
-        <DataProperty IRI="#has_low_calories"/>
-        <NamedIndividual IRI="#bacon"/>
-        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">false</Literal>
-    </DataPropertyAssertion>
-    <DataPropertyAssertion>
-        <DataProperty IRI="#has_gluten"/>
-        <NamedIndividual IRI="#egg"/>
-        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">false</Literal>
-    </DataPropertyAssertion>
-    <DataPropertyAssertion>
-        <DataProperty IRI="#has_lactose"/>
-        <NamedIndividual IRI="#egg"/>
-        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">false</Literal>
-    </DataPropertyAssertion>
-    <DataPropertyAssertion>
-        <DataProperty IRI="#has_low_calories"/>
-        <NamedIndividual IRI="#egg"/>
-        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">false</Literal>
-    </DataPropertyAssertion>
-    <DataPropertyAssertion>
-        <DataProperty IRI="#has_lactose"/>
-        <NamedIndividual IRI="#gluten"/>
-        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">false</Literal>
-    </DataPropertyAssertion>
-    <DataPropertyAssertion>
-        <DataProperty IRI="#has_gluten"/>
-        <NamedIndividual IRI="#pasta"/>
-        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
-    </DataPropertyAssertion>
-    <DataPropertyAssertion>
-        <DataProperty IRI="#has_lactose"/>
-        <NamedIndividual IRI="#pasta"/>
-        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">false</Literal>
-    </DataPropertyAssertion>
-    <DataPropertyAssertion>
-        <DataProperty IRI="#has_low_calories"/>
-        <NamedIndividual IRI="#pasta"/>
-        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
-    </DataPropertyAssertion>
-    <DataPropertyAssertion>
-        <DataProperty IRI="#has_gluten"/>
-        <NamedIndividual IRI="#pecorino"/>
-        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">false</Literal>
-    </DataPropertyAssertion>
-    <DataPropertyAssertion>
-        <DataProperty IRI="#has_lactose"/>
-        <NamedIndividual IRI="#pecorino"/>
-        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
-    </DataPropertyAssertion>
-    <DataPropertyAssertion>
-        <DataProperty IRI="#has_low_calories"/>
-        <NamedIndividual IRI="#pecorino"/>
-        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">false</Literal>
-    </DataPropertyAssertion>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#contains"/>
-        <Class IRI="#Meal"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#contains"/>
-        <Class IRI="#Ingredient"/>
-    </ObjectPropertyRange>
-    <SubDataPropertyOf>
-        <DataProperty IRI="#has_gluten"/>
-        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
-    </SubDataPropertyOf>
-    <SubDataPropertyOf>
-        <DataProperty IRI="#has_lactose"/>
-        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
-    </SubDataPropertyOf>
-    <SubDataPropertyOf>
-        <DataProperty IRI="#has_low_calories"/>
-        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
-    </SubDataPropertyOf>
-    <DataPropertyDomain>
-        <DataProperty IRI="#has_gluten"/>
-        <Class IRI="#Ingredient"/>
-    </DataPropertyDomain>
-    <DataPropertyDomain>
-        <DataProperty IRI="#has_lactose"/>
-        <Class IRI="#Ingredient"/>
-    </DataPropertyDomain>
-    <DataPropertyDomain>
-        <DataProperty IRI="#has_low_calories"/>
-        <Class IRI="#Ingredient"/>
-    </DataPropertyDomain>
-    <DataPropertyRange>
-        <DataProperty IRI="#has_gluten"/>
-        <Datatype abbreviatedIRI="xsd:boolean"/>
-    </DataPropertyRange>
-    <DataPropertyRange>
-        <DataProperty IRI="#has_lactose"/>
-        <Datatype abbreviatedIRI="xsd:boolean"/>
-    </DataPropertyRange>
-    <DataPropertyRange>
-        <DataProperty IRI="#has_low_calories"/>
-        <Datatype abbreviatedIRI="xsd:boolean"/>
-    </DataPropertyRange>
-</Ontology>
+     xmlns:untitled-ontology-5="http://www.semanticweb.org/tommaso/ontologies/2022/5/untitled-ontology-5#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#contains -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#contains">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#Meal"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#Ingredient"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#includes -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#includes">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#Category"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#Ingredient"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#Category -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#Category">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#Ingredient -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#Ingredient">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#Meal -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#Meal">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#bacon -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#bacon">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#Ingredient"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#carbonara -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#carbonara">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#Meal"/>
+        <menu:contains rdf:resource="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#bacon"/>
+        <menu:contains rdf:resource="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#egg"/>
+        <menu:contains rdf:resource="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#pasta"/>
+        <menu:contains rdf:resource="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#pecorino"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#egg -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#egg">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#Ingredient"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#flour -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#flour">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#Ingredient"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#gluten_free -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#gluten_free">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#Category"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#lactose_free -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#lactose_free">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#Category"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#lettuce -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#lettuce">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#Ingredient"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#low_calorie -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#low_calorie">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#Category"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#margherita -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#margherita">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#Meal"/>
+        <menu:contains rdf:resource="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#flour"/>
+        <menu:contains rdf:resource="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#mozzarella"/>
+        <menu:contains rdf:resource="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#tomato"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#mixed_salad -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#mixed_salad">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#Meal"/>
+        <menu:contains rdf:resource="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#lettuce"/>
+        <menu:contains rdf:resource="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#onion"/>
+        <menu:contains rdf:resource="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#tomato"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#mozzarella -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#mozzarella">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#Ingredient"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#onion -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#onion">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#Ingredient"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#pasta -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#pasta">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#Ingredient"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#pecorino -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#pecorino">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#Ingredient"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#tomato -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#tomato">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#Ingredient"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#vegan -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#vegan">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#Category"/>
+        <menu:includes rdf:resource="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#flour"/>
+        <menu:includes rdf:resource="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#lettuce"/>
+        <menu:includes rdf:resource="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#onion"/>
+        <menu:includes rdf:resource="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#pasta"/>
+        <menu:includes rdf:resource="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#tomato"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#vegetarian -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#vegetarian">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#Category"/>
+        <menu:includes rdf:resource="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#egg"/>
+        <menu:includes rdf:resource="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#mozzarella"/>
+        <menu:includes rdf:resource="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#pecorino"/>
+        <menu:includes rdf:resource="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#vegan"/>
+    </owl:NamedIndividual>
+</rdf:RDF>
 
 
 
