@@ -3,5 +3,67 @@ PREFIX owl: <http://www.w3.org/2002/07/owl#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 PREFIX po: <http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#>
-SELECT ?m
-	WHERE { ?m po:contains ?y . po:vegan po:includes ?y }
+
+query per sapere quali piatti non può mangiare un vegan
+SELECT distinct ?meal
+	where {?meal po:contains ?ingredient.
+	po:not_vegan po:includes ?ingredient
+	}
+
+vegan menu
+SELECT ?meal
+	WHERE {
+		?meal po:has_id ?id.
+		MINUS {
+			?meal po:contains ?ingredient.
+			po:not_vegan po:includes ?ingredient
+		}
+	}
+
+
+vegetarian menu
+SELECT ?meal
+	WHERE {
+		?meal po:has_id ?id.
+		MINUS {
+			?meal po:contains ?ingredient.
+			po:not_vegetarian po:includes ?ingredient
+		}
+	}
+
+vegetarian and lactose-free menu
+SELECT ?meal
+	WHERE {
+		?meal po:has_id ?id.
+		MINUS {
+			?meal po:contains ?ingredient.
+			po:not_vegetarian po:includes ?ingredient
+		}.
+		MINUS {
+			?meal po:contains ?ingredient.
+			po:not_lactose_free po:includes ?ingredient.
+		}
+	}
+
+
+vegan, lactose-free, gluten-free and low-calories menu (WORST CASE SCENARIO)
+SELECT ?meal
+	WHERE {
+		?meal po:has_id ?id.
+		MINUS {
+			?meal po:contains ?ingredient.
+			po:not_vegan po:includes ?ingredient
+		}.
+		MINUS {
+			?meal po:contains ?ingredient.
+			po:not_lactose_free po:includes ?ingredient.
+		}.
+		MINUS {
+			?meal po:contains ?ingredient.
+			po:not_gluten_free po:includes ?ingredient.
+		}.
+		MINUS {
+			?meal po:contains ?ingredient.
+			po:not_low_calories po:includes ?ingredient.
+		}
+	}
