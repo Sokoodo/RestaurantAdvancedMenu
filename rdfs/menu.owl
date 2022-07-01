@@ -29,7 +29,6 @@
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#Meal"/>
         <rdfs:range rdf:resource="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#Ingredient"/>
-        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#not_contains"/>
     </owl:ObjectProperty>
     
 
@@ -39,16 +38,6 @@
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#includes">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#Category"/>
-        <rdfs:range rdf:resource="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#Ingredient"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#not_contains -->
-
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#not_contains">
-        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#Meal"/>
         <rdfs:range rdf:resource="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#Ingredient"/>
     </owl:ObjectProperty>
     
@@ -120,6 +109,37 @@
     
 
 
+    <!-- http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#apple -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#apple">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#Ingredient"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#apple_pie -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#apple_pie">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#Meal"/>
+        <menu:contains rdf:resource="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#apple"/>
+        <menu:contains rdf:resource="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#butter"/>
+        <menu:contains rdf:resource="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#flour"/>
+        <menu:contains rdf:resource="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#lemon"/>
+        <menu:contains rdf:resource="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#milk"/>
+        <menu:contains rdf:resource="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#sugar"/>
+        <menu:has_id>APPL</menu:has_id>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#aubergine -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#aubergine">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#Ingredient"/>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#bacon -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#bacon">
@@ -128,24 +148,61 @@
     
 
 
-    <!-- http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#beef_steak -->
+    <!-- http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#banana -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#beef_steak">
-        <menu:contains rdf:resource="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#bacon"/>
-        <menu:has_id>steak</menu:has_id>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#banana">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#Ingredient"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#carbonara -->
+    <!-- http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#beef -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#carbonara">
-        <rdf:type rdf:resource="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#Meal"/>
-        <menu:contains rdf:resource="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#bacon"/>
-        <menu:contains rdf:resource="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#egg"/>
-        <menu:contains rdf:resource="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#pasta"/>
-        <menu:contains rdf:resource="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#pecorino"/>
-        <menu:has_id>carb</menu:has_id>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#beef">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#Ingredient"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#beef_steak -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#beef_steak">
+        <menu:contains rdf:resource="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#beef"/>
+        <menu:contains rdf:resource="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#rocket_salad"/>
+        <menu:contains rdf:resource="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#tomato"/>
+        <menu:has_id>STEA</menu:has_id>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#breadcrumbs -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#breadcrumbs">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#Ingredient"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#butter -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#butter">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#Ingredient"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#coffee -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#coffee">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#Ingredient"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#cookie -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#cookie">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#Ingredient"/>
     </owl:NamedIndividual>
     
 
@@ -174,10 +231,31 @@
     
 
 
-    <!-- http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#gluten_free -->
+    <!-- http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#grape -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#gluten_free">
-        <rdf:type rdf:resource="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#Category"/>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#grape">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#Ingredient"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#grilled_vegetables -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#grilled_vegetables">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#Ingredient"/>
+        <menu:contains rdf:resource="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#aubergine"/>
+        <menu:contains rdf:resource="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#onion"/>
+        <menu:contains rdf:resource="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#tomato"/>
+        <menu:contains rdf:resource="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#zucchini"/>
+        <menu:has_id>GRIL</menu:has_id>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#ham -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#ham">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#Ingredient"/>
     </owl:NamedIndividual>
     
 
@@ -190,10 +268,18 @@
     
 
 
-    <!-- http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#lactose_free -->
+    <!-- http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#kiwi -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#lactose_free">
-        <rdf:type rdf:resource="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#Category"/>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#kiwi">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#Ingredient"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#lemon -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#lemon">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#Ingredient"/>
     </owl:NamedIndividual>
     
 
@@ -206,22 +292,44 @@
     
 
 
-    <!-- http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#low_calorie -->
+    <!-- http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#mascarpone_cheese -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#low_calorie">
-        <rdf:type rdf:resource="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#Category"/>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#mascarpone_cheese">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#Ingredient"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#margherita -->
+    <!-- http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#milk -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#margherita">
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#milk">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#Ingredient"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#mixed_fried_food -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#mixed_fried_food">
         <rdf:type rdf:resource="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#Meal"/>
-        <menu:contains rdf:resource="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#flour"/>
-        <menu:contains rdf:resource="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#mozzarella"/>
-        <menu:contains rdf:resource="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#tomato"/>
-        <menu:has_id>margh</menu:has_id>
+        <menu:contains rdf:resource="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#breadcrumbs"/>
+        <menu:contains rdf:resource="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#mozzarella_cheese"/>
+        <menu:contains rdf:resource="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#onion"/>
+        <menu:contains rdf:resource="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#potato"/>
+        <menu:has_id>FRIE</menu:has_id>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#mixed_fruit -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#mixed_fruit">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#Meal"/>
+        <menu:contains rdf:resource="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#apple"/>
+        <menu:contains rdf:resource="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#banana"/>
+        <menu:contains rdf:resource="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#grape"/>
+        <menu:contains rdf:resource="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#kiwi"/>
+        <menu:has_id>FRUI</menu:has_id>
     </owl:NamedIndividual>
     
 
@@ -233,15 +341,36 @@
         <menu:contains rdf:resource="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#lettuce"/>
         <menu:contains rdf:resource="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#onion"/>
         <menu:contains rdf:resource="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#tomato"/>
-        <menu:has_id>salad</menu:has_id>
+        <menu:has_id>SALA</menu:has_id>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#mozzarella -->
+    <!-- http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#mozzarella_cheese -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#mozzarella">
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#mozzarella_cheese">
         <rdf:type rdf:resource="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#Ingredient"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#mushroom -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#mushroom">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#Ingredient"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#mushroom_risotto -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#mushroom_risotto">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#Meal"/>
+        <menu:contains rdf:resource="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#mushroom"/>
+        <menu:contains rdf:resource="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#onion"/>
+        <menu:contains rdf:resource="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#parsley"/>
+        <menu:contains rdf:resource="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#rice"/>
+        <menu:has_id>MUSH</menu:has_id>
     </owl:NamedIndividual>
     
 
@@ -250,6 +379,8 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#not_gluten_free">
         <rdf:type rdf:resource="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#Category"/>
+        <menu:includes rdf:resource="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#breadcrumbs"/>
+        <menu:includes rdf:resource="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#cookie"/>
         <menu:includes rdf:resource="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#flour"/>
         <menu:includes rdf:resource="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#pasta"/>
     </owl:NamedIndividual>
@@ -260,8 +391,11 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#not_lactose_free">
         <rdf:type rdf:resource="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#Category"/>
-        <menu:includes rdf:resource="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#mozzarella"/>
-        <menu:includes rdf:resource="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#pecorino"/>
+        <menu:includes rdf:resource="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#butter"/>
+        <menu:includes rdf:resource="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#mascarpone_cheese"/>
+        <menu:includes rdf:resource="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#milk"/>
+        <menu:includes rdf:resource="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#mozzarella_cheese"/>
+        <menu:includes rdf:resource="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#pecorino_cheese"/>
     </owl:NamedIndividual>
     
 
@@ -271,9 +405,16 @@
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#not_low_calories">
         <rdf:type rdf:resource="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#Category"/>
         <menu:includes rdf:resource="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#bacon"/>
+        <menu:includes rdf:resource="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#beef"/>
+        <menu:includes rdf:resource="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#butter"/>
+        <menu:includes rdf:resource="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#cookie"/>
         <menu:includes rdf:resource="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#egg"/>
-        <menu:includes rdf:resource="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#mozzarella"/>
-        <menu:includes rdf:resource="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#pecorino"/>
+        <menu:includes rdf:resource="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#ham"/>
+        <menu:includes rdf:resource="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#mascarpone_cheese"/>
+        <menu:includes rdf:resource="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#milk"/>
+        <menu:includes rdf:resource="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#mozzarella_cheese"/>
+        <menu:includes rdf:resource="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#pecorino_cheese"/>
+        <menu:includes rdf:resource="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#pepperoni"/>
     </owl:NamedIndividual>
     
 
@@ -283,9 +424,16 @@
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#not_vegan">
         <rdf:type rdf:resource="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#Category"/>
         <menu:includes rdf:resource="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#bacon"/>
+        <menu:includes rdf:resource="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#beef"/>
+        <menu:includes rdf:resource="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#butter"/>
+        <menu:includes rdf:resource="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#cookie"/>
         <menu:includes rdf:resource="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#egg"/>
-        <menu:includes rdf:resource="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#mozzarella"/>
-        <menu:includes rdf:resource="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#pecorino"/>
+        <menu:includes rdf:resource="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#ham"/>
+        <menu:includes rdf:resource="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#mascarpone_cheese"/>
+        <menu:includes rdf:resource="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#milk"/>
+        <menu:includes rdf:resource="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#mozzarella_cheese"/>
+        <menu:includes rdf:resource="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#pecorino_cheese"/>
+        <menu:includes rdf:resource="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#pepperoni"/>
     </owl:NamedIndividual>
     
 
@@ -295,6 +443,9 @@
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#not_vegetarian">
         <rdf:type rdf:resource="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#Category"/>
         <menu:includes rdf:resource="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#bacon"/>
+        <menu:includes rdf:resource="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#beef"/>
+        <menu:includes rdf:resource="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#ham"/>
+        <menu:includes rdf:resource="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#pepperoni"/>
     </owl:NamedIndividual>
     
 
@@ -302,6 +453,14 @@
     <!-- http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#onion -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#onion">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#Ingredient"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#parsley -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#parsley">
         <rdf:type rdf:resource="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#Ingredient"/>
     </owl:NamedIndividual>
     
@@ -323,15 +482,120 @@
         <menu:contains rdf:resource="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#hot_pepper"/>
         <menu:contains rdf:resource="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#pasta"/>
         <menu:contains rdf:resource="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#tomato"/>
-        <menu:has_id>arrabbiata</menu:has_id>
+        <menu:has_id>ARRA</menu:has_id>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#pecorino -->
+    <!-- http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#pasta_carbonara -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#pecorino">
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#pasta_carbonara">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#Meal"/>
+        <menu:contains rdf:resource="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#bacon"/>
+        <menu:contains rdf:resource="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#egg"/>
+        <menu:contains rdf:resource="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#pasta"/>
+        <menu:contains rdf:resource="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#pecorino_cheese"/>
+        <menu:has_id>CARB</menu:has_id>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#pecorino_cheese -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#pecorino_cheese">
         <rdf:type rdf:resource="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#Ingredient"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#pepperoni -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#pepperoni">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#Ingredient"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#pepperoni_pizza -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#pepperoni_pizza">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#Meal"/>
+        <menu:contains rdf:resource="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#flour"/>
+        <menu:contains rdf:resource="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#mozzarella_cheese"/>
+        <menu:contains rdf:resource="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#pepperoni"/>
+        <menu:contains rdf:resource="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#tomato"/>
+        <menu:has_id>PEPP</menu:has_id>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#pizza_boscaiola -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#pizza_boscaiola">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#Meal"/>
+        <menu:contains rdf:resource="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#flour"/>
+        <menu:contains rdf:resource="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#ham"/>
+        <menu:contains rdf:resource="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#mozzarella_cheese"/>
+        <menu:contains rdf:resource="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#mushroom"/>
+        <menu:has_id>BOSC</menu:has_id>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#pizza_margherita -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#pizza_margherita">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#Meal"/>
+        <menu:contains rdf:resource="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#flour"/>
+        <menu:contains rdf:resource="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#mozzarella_cheese"/>
+        <menu:contains rdf:resource="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#tomato"/>
+        <menu:has_id>MARG</menu:has_id>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#potato -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#potato">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#Ingredient"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#rice -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#rice">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#Ingredient"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#rocket_salad -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#rocket_salad">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#Ingredient"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#sugar -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#sugar">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#Ingredient"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#tiramisu -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#tiramisu">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#Meal"/>
+        <menu:contains rdf:resource="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#coffee"/>
+        <menu:contains rdf:resource="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#cookie"/>
+        <menu:contains rdf:resource="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#egg"/>
+        <menu:contains rdf:resource="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#mascarpone_cheese"/>
+        <menu:contains rdf:resource="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#sugar"/>
+        <menu:has_id>TIRA</menu:has_id>
     </owl:NamedIndividual>
     
 
@@ -344,36 +608,10 @@
     
 
 
-    <!-- http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#vegan -->
+    <!-- http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#zucchini -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#vegan">
-        <rdf:type rdf:resource="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#Category"/>
-        <menu:includes rdf:resource="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#flour"/>
-        <menu:includes rdf:resource="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#garlic"/>
-        <menu:includes rdf:resource="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#hot_pepper"/>
-        <menu:includes rdf:resource="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#lettuce"/>
-        <menu:includes rdf:resource="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#onion"/>
-        <menu:includes rdf:resource="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#pasta"/>
-        <menu:includes rdf:resource="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#tomato"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#vegetarian -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#vegetarian">
-        <rdf:type rdf:resource="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#Category"/>
-        <menu:includes rdf:resource="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#egg"/>
-        <menu:includes rdf:resource="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#flour"/>
-        <menu:includes rdf:resource="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#garlic"/>
-        <menu:includes rdf:resource="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#hot_pepper"/>
-        <menu:includes rdf:resource="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#lettuce"/>
-        <menu:includes rdf:resource="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#mozzarella"/>
-        <menu:includes rdf:resource="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#onion"/>
-        <menu:includes rdf:resource="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#pasta"/>
-        <menu:includes rdf:resource="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#pecorino"/>
-        <menu:includes rdf:resource="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#tomato"/>
-        <menu:includes rdf:resource="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#vegan"/>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#zucchini">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#Ingredient"/>
     </owl:NamedIndividual>
 </rdf:RDF>
 
