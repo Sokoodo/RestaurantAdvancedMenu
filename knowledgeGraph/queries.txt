@@ -4,13 +4,13 @@ PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 PREFIX po: <http://www.semanticweb.org/tommaso/ontologies/2022/5/menu#>
 
-query per sapere quali piatti non può mangiare un vegan
+#To see which meals a vegan can't eat
 SELECT distinct ?meal
 	where {?meal po:contains ?ingredient.
 	po:not_vegan po:includes ?ingredient
 	}
 
-vegan menu
+#The vegan menu
 SELECT ?meal
 	WHERE {
 		?meal po:has_id ?id.
@@ -21,7 +21,7 @@ SELECT ?meal
 	}
 
 
-vegetarian menu
+#The vegetarian menu
 SELECT ?meal
 	WHERE {
 		?meal po:has_id ?id.
@@ -31,7 +31,7 @@ SELECT ?meal
 		}
 	}
 
-vegetarian and lactose-free menu
+#The vegetarian and lactose-free menu
 SELECT ?meal
 	WHERE {
 		?meal po:has_id ?id.
@@ -46,7 +46,7 @@ SELECT ?meal
 	}
 
 
-vegan, lactose-free, gluten-free and low-calories menu (WORST CASE SCENARIO)
+#Vegan, lactose-free, gluten-free and low-calories menu (WORST CASE SCENARIO)
 SELECT ?meal
 	WHERE {
 		?meal po:has_id ?id.
